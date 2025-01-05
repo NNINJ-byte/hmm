@@ -1,0 +1,167 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* Default background */
+    transition: background 1s ease-in-out;
+}
+#next-stage{
+    text-decoration: none;
+    color: white;
+}
+#chess-image {
+    width: 100%;          /* Ensure the image takes up the full width of the container */         /* Maintain aspect ratio */
+    object-fit: cover;    /* Ensure the image covers the container without distortion */
+    border-radius: 4px;   /* Optional: Apply rounded corners if desired */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Optional: Add a shadow for a 3D effect */
+}
+
+#container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    max-height: 90%;
+    max-width: 90%;  /* Ensure the container doesn't exceed 90% of the screen */
+}
+
+#chess-board {
+    margin: 20px 0;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#input-section {
+    margin-top: 20px;
+}
+
+#move-input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 300px; /* Limit input width for larger screens */
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Animation for winning cheer */
+@keyframes cheer {
+    0% { background-color: #4CAF50; color: #fff; }
+    50% { background-color: #8BC34A; color: #000; }
+    100% { background-color: #4CAF50; color: #fff; }
+}
+
+.win {
+    animation: cheer 1s infinite alternate;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Animation for body background */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.win-background {
+    background: linear-gradient(45deg, #ff6b6b, #f0a500, #48c6ef, #6a11cb);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s ease infinite;
+}
+
+/* Responsive Design - Mobile */
+@media screen and (max-width: 600px) {
+    #container {
+        width: 95%; /* Use 95% of the screen width */
+        padding: 15px;
+    }
+
+    #move-input {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    #message {
+        font-size: 16px;
+    }
+}
+
+/* Responsive Design - Tablet */
+@media screen and (max-width: 900px) {
+    #container {
+        width: 90%; /* Use 90% of the screen width */
+        padding: 20px;
+    }
+
+    #move-input {
+        width: 85%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #message {
+        font-size: 18px;
+    }
+}
+
+/* Responsive Design - Large screens (Desktop) */
+@media screen and (min-width: 1200px) {
+    #move-input {
+        width: 80%; /* Set a max width for larger screens */
+    }
+
+    button {
+        padding: 12px 18px;
+        font-size: 18px;
+    }
+}

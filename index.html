@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Move Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Game 1:Mate in one
+            Black moves</h1>
+        <div id="chess-board">
+            <!-- You can use an image or dynamically generate the board here -->
+            <img src="chess.png" id = "chess-image">
+        </div>
+        <div id="input-section">
+            <label for="move-input">Enter your best move:</label>
+            <input type="text" id="move-input" placeholder="e.g., re2">
+            <button id="submit-move">Submit Move</button>
+        </div>
+        <div id="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
