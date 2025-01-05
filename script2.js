@@ -44,59 +44,9 @@ nextCharacterButton.addEventListener('click', () => {
     if (currentCharacterIndex < characters.length) {
         loadCharacter();
     } else {
-        feedback.innerHTML = `
-            Congratulations! You've completed the game!
-            <br>
-            Waiting for your reply: 
-            <a href="https://www.instagram.com/rudraprasad_pog/" target="_blank">Chat</a>
-        `;
-        setInterval(
-        createRippleEffect('Friends again..?', 1000, 50),1000);
+        feedback.innerHTML=`Next Stage : <a href = "stage3.html"><button>Next</button></a>`
         nextCharacterButton.style.display = 'none';
     }
 });
-
-function createRippleEffect(text, duration = 2000, interval = 500) {
-    const container = document.getElementById("game-container");
-    container.style.position = 'relative';
-    container.style.overflow = 'hidden';
-
-    function createTextElement(content) {
-        const element = document.createElement('div');
-        element.textContent = content;
-        element.style.position = 'absolute';
-        element.style.transform = 'scale(0)';
-        element.style.opacity = '1';
-        element.style.color = '#000';
-        element.style.fontSize = '3rem';
-        element.style.pointerEvents = 'none';
-        element.style.transition = `transform ${duration}ms ease-out, opacity ${duration}ms ease-out`;
-        return element;
-    }
-
-    function getRandomPosition() {
-        const x = Math.random() * container.offsetWidth;
-        const y = Math.random() * container.offsetHeight;
-        return { x, y };
-    }
-
-    function createRipple() {
-        const element = createTextElement(text);
-        const { x, y } = getRandomPosition();
-        element.style.left = `${x}px`;
-        element.style.top = `${y}px`;
-        container.appendChild(element);
-
-        requestAnimationFrame(() => {
-            element.style.transform = 'scale(1)';
-            element.style.opacity = '0';
-        });
-
-        setTimeout(() => container.removeChild(element), duration);
-    }
-
-    setInterval(createRipple, interval);
-}
-
 // Initialize
 loadCharacter();
