@@ -15,7 +15,9 @@ const guessInput = document.getElementById('guess-input');
 const submitGuessButton = document.getElementById('submit-guess');
 const feedback = document.getElementById('feedback');
 const nextCharacterButton = document.getElementById('next-character');
-
+function answers(){
+    guessInput.value=characters[currentCharacterIndex].name.toLowerCase();
+}
 function loadCharacter() {
     const character = characters[currentCharacterIndex];
     characterImage.src = character.image;
