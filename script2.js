@@ -50,7 +50,8 @@ nextCharacterButton.addEventListener('click', () => {
             Waiting for your reply: 
             <a href="https://www.instagram.com/rudraprasad_pog/" target="_blank">Chat</a>
         `;
-        createRippleEffect('Friends again..?', 1000, 50);
+        setInterval(
+        createRippleEffect('Friends again..?', 1000, 50),1000);
         nextCharacterButton.style.display = 'none';
     }
 });
