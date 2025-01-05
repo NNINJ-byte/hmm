@@ -55,7 +55,7 @@ nextCharacterButton.addEventListener('click', () => {
 // Initialize the game
 loadCharacter();
 function createRippleEffect(text, duration = 2000, interval = 500) {
-    const body = document.body;
+    const body = document.getElementById("game-container");
     body.style.position = 'relative';
     body.style.overflow = 'hidden';
     body.style.margin = '0';
